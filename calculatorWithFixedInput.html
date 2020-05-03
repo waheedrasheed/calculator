@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+          html functions  
+        </title>
+    </head>
+    
+    <body> 
+     
+     <p id="addId"> add two numbers </p>
+     <p id="productId">multiply two numbers</p>
+     <p id = "subtactId"> subtract two numbers</p>
+     <p id= "divideId"> divide two numbers</p>
+      
+     <script>
+        add("addId", 4, 5);
+        product("productId", 5, 6);
+        subtract("subtactId", 15, 10);
+        divide("divideId", 20, 5);
+
+        function add(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = "add " + (x + y);     
+        }
+
+        function product(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = "multiply " + (x * y);     
+        }
+
+        function subtract(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = "subtract " + (x - y);     
+        }
+
+        function divide(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = "divide " + (x / y);     
+        }
+     </script>
+
+     <br>
+
+     <button onClick="add('addId', 5, 10)">Add</button>
+     <button onClick="product('productId', 10, 2)">Product</button>
+     <button onClick="subtract('subtactId', 6, 10)">Subtract</button>
+     <button onClick="divide('divideId', 155, 5)">Divide</button>
+
+    </body>
+</html>

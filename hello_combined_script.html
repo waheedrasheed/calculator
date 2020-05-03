@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title id= "titleId">
+            assingment 
+        </title>
+    </head>
+    <body>
+        <p style="color: red;">
+            i am red
+        </p>
+
+        <img id= "myImg" src="IMG_4156.JPG"
+        style="width:300px;height:300px;  transform: rotate(90deg);">
+
+        <audio id="myAudioId" controls autoplay>
+            <source src="abc.mp3" type="audio/mpeg">
+        </audio>
+
+        <p id="p2Id" style="color:green;">
+            i am green
+        </p>
+
+        <p style="color: gold;">
+            i am gold
+        </p>
+
+        <script>
+            document.getElementById("myAudioId").load();
+            document.getElementById("myAudioId").play();
+            document.getElementById("myImg").src= "zz.png";
+            document.getElementById("titleId").innerHTML= "my color assingment";
+            document.getElementById("p2Id").innerHTML= "i am blue";
+            document.getElementById("p2Id").style.color = "darkblue";
+            document.getElementById("p2Id").style.fontSize = "xx-large";
+            document.getElementById("p2Id").style.fontFamily= "arial";
+            document.getElementById("p2Id").style.fontStyle = "italic";
+        </script>
+    </body>
+</html>

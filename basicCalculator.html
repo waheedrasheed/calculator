@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>
+          Basic Calculator
+        </title>
+    </head>
+    <body>
+        <input id = "xId" text="enter first number">
+        <input id = "yId" text="enter second number">
+        <input id = "zId" text="Answer">
+     <script>
+
+        var xObject = document.getElementById("xId");
+        var yObject = document.getElementById("yId");
+        var zObject = document.getElementById("zId");
+
+        function add() {
+            var x = xObject.value;
+            var y = yObject.value;
+
+            zObject.value = parseInt(x) + parseInt(y);     
+        }
+        
+        function product() {
+            var x = xObject.value;
+            var y = yObject.value;
+
+            zObject.value = parseInt(x) * parseInt(y);     
+        }
+        
+        function subtract() {
+            var x = xObject.value;
+            var y = yObject.value;
+
+            zObject.value = parseInt(x) - parseInt(y);     
+        }
+        
+        function divide() {
+            var x = xObject.value;
+            var y = yObject.value;
+
+            zObject.value = parseInt(x) / parseInt(y);     
+        }
+        function modulus() {
+            var x = xObject.value;
+            var y = yObject.value;
+
+            zObject.value = parseInt(x) % parseInt(y);     
+        }
+     </script>
+
+     <br>
+
+     <button onClick="add()">Add</button>
+     <button onClick="product()">Product</button>
+     <button onClick="subtract()">Subtract</button>
+     <button onClick="divide()">Divide</button>
+     <button onclick="modulus()"> Modulus</button>
+
+    </body>
+</html>

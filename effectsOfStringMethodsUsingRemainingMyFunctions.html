@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>
+          html functions  
+        </title>
+    </head>
+<body> 
+     <p id= "nameId"> my name is waheed</p>
+     <p id="girlId"> mahnoor is a good girl</p>
+     <p id= "elementId"> Define specific information about element</p>
+     <p id="colorId">define about styles, formatting color</p>
+     <p id="linkId">define about how put the links for extra information</p>
+     <p id="webId"> HTML is the standard markup language for Web pages</p>
+     <p id="learnId"> HTML is easy to learn... Link</p>
+     <p id="structureId"> HTML describes the structure of a Web page</p>
+     <p id= "seriesId"> HTML consists of a series of elements</p>
+     <p id="firstId">hello world</p>
+     <p id="secondId">hello world</p>
+     <p id="thirdId">hello world</p>
+     <p id="fourthId">hello world</p>
+     <p id="fifthId">hello world</p>
+     <p id="sixthId">hello world</p>
+     <p id="seventhId">hello world</p> 
+     <p id="eigthId">hello world</p> 
+     <p id="ninthId">hello world</p>
+     <p id="tenthId">hello world</p>
+     <p id = "elevanthId">hello world</p> 
+     <p id="addId"> add two number </p>
+      
+
+     <script>
+        var nameString = "my name is waheed";
+        var girlString =" mahnoor is a good girl";
+        var elementString="Define specific information about element";
+        var colorString="define about styles, formatting color";
+        var linkString="define about how put the links for extra information";
+        var webString="HTML is the standard markup language for Web pages"
+        var learnString="HTML is easy to learn";
+        var structureString="HTML describes the structure of a Web page";
+        var seriesString=" HTML consists of a series of elements";
+        var firstString ="hello world";
+        var secondString="hello world";
+        var thirdString="hello world";
+        var fourthString="hello world";
+        var fifthString="hello world";
+        var sixthString="hello world";
+        var seventhString="hello world";
+        var eigthString="hello world";
+        var ninthString="hello world";
+        var tenthString="hello world";
+        var elevanthString="hello world";
+        var x = 1;
+        var y = 2;        
+
+        convertToLowerCase("girlId", girlString);
+        changeColor("linkId", linkString, "blue");
+        convertToUppercase("seriesId", seriesString);
+        changeFontStyle ("nameId", nameString);
+        convertToSubscript("secondId", secondString);
+        add("girlId", x, y);
+        add("linkId", 4, 5);
+        //product("webId", 5, 6);
+        //subtract("learnId", 15, 10);
+        //divide("structureId", 20, 5);       
+
+        /*simpleAdd("girlId");
+        x = 4;
+        y = 5;
+        simpleAdd("linkId");
+        function simpleAdd(objectId) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = x + y;     
+        }*/
+
+        function add(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = x + y;     
+        }
+
+        function product(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = x * y;     
+        }
+
+        function subtract(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = x - y;     
+        }
+
+        function divide(objectId, x, y) {
+            var htmlElementObject = document.getElementById(objectId);
+            htmlElementObject.innerHTML = x / y;     
+        }
+
+        function convertToLowerCase(objectId, stringToChange) {
+            var htmlElementObject = document.getElementById(objectId);
+
+            htmlElementObject.innerHTML = "convertToLowerCase: " + stringToChange.toLowerCase();
+        }
+
+        function changeColor(objectId, stringToChange, newColor) {
+            var htmlElementObject = document.getElementById(objectId);
+
+            htmlElementObject.innerHTML = "changeColor: " + stringToChange.fontcolor(newColor);
+        }
+
+        function convertToUppercase(objectId, stringToChange) {
+            var htmlElementObject = document.getElementById(objectId); 
+            htmlElementObject.innerHTML = "convertToUppercase: " + stringToChange.toUpperCase();
+        }
+
+         function changeFontStyle (objectId, stringToChange) {
+            var htmlElementObject = document.getElementById(objectId);
+
+            htmlElementObject.innerHTML= "changeFontStyle: " + stringToChange.italics();
+        }
+
+        function convertToSubscript (objectId, stringToChange) {
+           var htmlElementObject = document.getElementById(objectId);
+
+           htmlElementObject.innerHTML= "convertToSubscript: " +  stringToChange.sub(); 
+        }
+
+     </script>
+     <input id = "firstNumId" text="enter first number">
+     <input id = "sceondNumId" text="enter second number">
+     <button onClick="add('girlId', 5, 10)">Add</button>
+
+     <input id="answerId"> <br>
+
+     <input id = "firstNumId" text="enter first number">
+     <input id = "sceondNumId" text="enter second number">
+     <button onClick="product('webId', 10, 2)">Product</button>
+
+     <input id="answerId"> <br>
+
+     <input id = "firstNumId" text="enter first number">
+     <input id = "sceondNumId" text="enter second number">
+     <button onClick="subtract('learnId', 6, 10)">Subtract</button>
+
+     <input id="answerId"> <br>
+
+     <input id = "firstNumId" text="enter first number">
+     <input id = "sceondNumId" text="enter second number">
+     <button onClick="divide('structureId', 155, 5)">Divide</button>
+
+     <input id="answerId">
+     
+     
+
+    </body>
+</html>
