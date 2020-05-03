@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+          Basic Calculator
+        </title>
+    </head>
+    <body>
+      
+       <input id = "inputId" text="Answer"> <br>
+        
+     <script>
+        
+        var zObject = document.getElementById("inputId");
+
+        function  display() {
+          
+            var int = intObject.value = ("1","2", "3", "4", "5", "6", "7", "8", "9", "0");
+            var opt = optObject.value = ("+","-","*","/" );
+
+            zObject.value = parseInt(int) +(opt) + parseInt(int);     
+        }
+        
+       
+     </script>
+
+     <br>
+
+     <button display onClick="clear(C)">C</button>
+     <button onClick=" opt('/')">/</button>
+     <button onClick="opt('*')">*</button>
+     <button onClick="del(Del)" > Del</button> <br>
+     <button dislay onClick="int(7)">7</button>
+     <button onClick="int(8)">8</button>
+     <button onClick="int(9)">9</button>
+     <button onClick="opt('-')">-</button> <br>
+     <button onClick="int(4)">4</button>
+     <button onClick="int(5)">5</button>
+     <button onClick="int(6)">6</button>
+     <button onClick="opt('+')">+</button> <br>
+     <button onClick="int(1️)">1</button>
+     <button onClick="int(2)">2</button>
+     <button onClick="int(3)">3</button>
+     <button onClick="solve('=')">=</button> <br>
+     <button onClick="int(0)">0</button>
+     <button onClick="dot('.')">.</button> <br>
+     
+     <button onClick="product()">Product</button>
+     <button onClick="subtract()">Subtract</button>
+     <button onClick="divide()">Divide</button>
+     <button onclick="modulus()"> Modulus</button>
+
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title id= "titleId">
+            assingment 
+
+        </title>
+        <script>
+            var titleObject = document.getElementById("titleId");
+
+            document.getElementById("titleId").innerHTML= "color assingment"
+        </script>
+
+    </head>
+    <body> 
+         <p style="color: red;">
+            i am red
+
+        </p>
+        <ul style="list-style-type:upper-alpha;">
+            <li>img</li>
+            <li>audio</li>
+            <li>video</li>
+        </ul>
+
+        <img id= "myImg" src="IMG_4156.JPG"
+        style="width:300px;height:300px;  transform: rotate(90deg);">
+
+        <audio id="myAudioId" controls autoplay>
+            <source src="abc.mp3" type="audio/mpeg">
+        </audio>
+       
+        <button>open</button>
+        <br>
+       
+        <a href="www.gmail.com">this is the link </a>
+        <br>
+        
+        <video controls autoplay id="videoId"> 
+            <source src="video.mp4" type="video/mp4">
+
+        </video>
+
+        <script>
+            var videoObject = document.getElementById("videoId");
+            var imgObject = document.getElementById("myImg");
+            
+            document.getElementById("videoId").src="https://images.all-free-download.com/footage_preview/mp4/dead_trees_146.mp4";
+            document.getElementById("videoId").load();
+            //document.getElementById("myAudioId").load();
+            //document.getElementById("myAudioId").play();
+            document.getElementById("myImg").src= "zz.png";
+        </script> 
+
+        <p id="p2Id" style="color:green;">
+            i am green
+
+        </p>
+        <script>
+            var paragraph2 = document.getElementById("p2Id");
+            var paragraph2Style = paragraph2.style;
+
+            /*paragraph2.innerHTML= "i am blue";
+            paragraph2.style.color = "blue";
+            paragraph2.style.fontSize = "xx-large";
+            paragraph2.style.fontFamily= "arial";
+            paragraph2.style.fontStyle = "italic";*/
+
+            paragraph2.innerHTML= "i am blue";
+            paragraph2Style.color = "blue";
+            paragraph2Style.fontSize = "xx-large";
+            paragraph2Style.fontFamily= "arial";
+            paragraph2Style.fontStyle = "italic";
+
+            /*document.getElementById("p2Id").innerHTML= "i am blue";
+            document.getElementById("p2Id").style.color = "blue";
+            document.getElementById("p2Id").style.fontSize = "xx-large";
+            document.getElementById("p2Id").style.fontFamily= "arial";
+            document.getElementById("p2Id").style.fontStyle = "italic";*/
+        </script>
+
+        <p style= "background-color: blanchedalmond"
+        style="color: gold;">
+            i am gold
+        </p>
+
+    </body>
+</html>

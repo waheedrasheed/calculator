@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="firstParagraphId">
+This paragraph
+contains a lot of lines
+in the source code,
+but the browser 
+ignores it.
+</p>
+
+<p>
+The number of lines in a paragraph depends on the size of the browser window. you resize the browser window, the number of lines in this paragraph will change.
+</p>
+
+<script>
+function updateText() {
+	document.getElementById("firstParagraphId").innerHTML = "ABC"
+}
+</script>
+
+<script>
+setTimeout(updateText, 3000);
+</script>
+
+</body>
+</html>
