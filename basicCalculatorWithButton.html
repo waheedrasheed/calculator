@@ -13,7 +13,7 @@
         var xObject = document.getElementById("xId");
         var yObject = document.getElementById("yId");
         var zObject = document.getElementById("zId");
-        var inputBoxNumber = 0;
+        var inputBoxId = "xId";
 
         function add() {
             var x = xObject.value;
@@ -82,22 +82,22 @@
         }
 
         function display(numericalCharacter) {
-            if (inputBoxNumber == 0)
+            if (inputBoxId == "xId")
             {
                 xObject.value = xObject.value + numericalCharacter;
             }
-            else if (inputBoxNumber == 1)
+            else if (inputBoxId == "yId")
             {
                 yObject.value = yObject.value + numericalCharacter;
             }
         }
 
         function inputInTextBoxX() {
-            inputBoxNumber = 0;
+            inputBoxId = "xId";
         }
 
         function inputInTextBoxY() {
-            inputBoxNumber = 1;
+            inputBoxId = "yId";
         }
 
      </script>
