@@ -5,10 +5,9 @@
         </title>
     </head>
     <body>
-        <input id = "xId" text="enter first number">
-        <input id = "yId" text="enter second number">
+        <input id = "xId" onclick="inputInTextBoxX()" text="enter first number">
+        <input id = "yId" onclick="inputInTextBoxY()" text="enter second number">
         <input id = "zId" text="Answer">
-        <input id = "changeInputId" text="Input">
      <script>
 
         var xObject = document.getElementById("xId");
@@ -93,8 +92,12 @@
             }
         }
 
-        function changeTextBox() {
-            inputBoxNumber = parseInt(document.getElementById("changeInputId").value);
+        function inputInTextBoxX() {
+            inputBoxNumber = 0;
+        }
+
+        function inputInTextBoxY() {
+            inputBoxNumber = 1;
         }
 
      </script>
@@ -116,6 +119,5 @@
      <button onClick="display7()">7</button>  
      <button onClick="display8()">8</button>  
      <button onClick="display9()">9</button>
-     <button onClick="changeTextBox()">Change Text Box</button>
     </body>
 </html>
