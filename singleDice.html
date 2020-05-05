@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>
+          Single dice
+        </title>
+    </head>
+    <body>
+       
+       <p style="color: red;" id="dice1Id" text="dice1">0</p>
+       <p style="color: red;" id="dice2Id" text="dice2">0</p>
+       <button id="diceButtonId" onclick="rollDice()">Roll Dice</button>
+       <audio id="audioId" onended="enableButton()">
+        <source src="http://soundbible.com/mp3/Shake And Roll Dice-SoundBible.com-591494296.mp3" type="audio/mpeg">
+    </audio>
+    
+     <script>
+        var dice1 = document.getElementById("dice1Id");
+        var dice2 = document.getElementById("dice2Id");        
+        var audioObject = document.getElementById("audioId");
+        var diceButtonObject = document.getElementById("diceButtonId");
+        var diceColor = "red";
+
+        function rollDice(){
+        //var d1= (Math.floor(Math.random() * 100) % 6) + 1;
+        //var d2= (Math.floor(Math.random() * 100) % 6) + 1;
+        //dice1.innerHTML = d1;
+        //dice2.innerHTML = d2;
+
+        //updateDice(dice1);
+        //updateDice(dice2);
+        disableButton();
+       audioObject.play();
+        dice1.innerHTML = getDiceValue();
+        dice2.innerHTML = getDiceValue();
+        changeColor();
+        }
+
+        function disableButton() {
+            diceButtonObject.disabled = true;
+        }
+
+        function enableButton() {
+            diceButtonObject.disabled = false;
+        }
+
+        function changeColor()  {
+            if (diceColor == "red") {
+                dice1.style.color="blue";
+                dice2.style.color="blue";
+                diceColor = "blue";
+            }
+            else if (diceColor == "blue") {
+                dice1.style.color="green";
+                dice2.style.color="green";
+                diceColor = "green";
+            }
+            else if (diceColor == "green") {
+                dice1.style.color="gold";
+                dice2.style.color="gold";
+                diceColor = "gold";
+            }
+            else if (diceColor == "gold") {
+                dice1.style.color="red";
+                dice2.style.color="red";
+                diceColor= "red";
+            }
+        }
+        
+        function getDiceValue() {
+            var diceValue = (Math.floor(Math.random() * 100) % 6) + 1;
+
+            return diceValue;
+        }
+
+        function updateDice (diceObject) {
+            var diceValue = (Math.floor(Math.random() * 100) % 6) + 1;
+            diceObject.innerHTML = diceValue;
+        }
+
+        
+    </script>
+    
+    </body>
+</html>
