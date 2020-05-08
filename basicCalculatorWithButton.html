@@ -56,12 +56,11 @@
         
         function display0 () {
             display("0");
-            //updateXbox(xObject);
         }
         function displayDot(){
             display (".");
             //disableButton();
-            includes();
+            //includes();
         }
         function display1 () {
             display("1");   
@@ -93,33 +92,27 @@
  
         function display(numericalCharacter) {
             if (inputBoxId == "xId") {
-                if (xObject.value == "0") {
-                    xObject.value = numericalCharacter;
-                }
-                else if (numericalCharacter == ".") {
-                    if (xObject.value.includes(".") == false) {
-                        xObject.value = xObject.value + numericalCharacter;
-                    }
-                }
-                else {
-                    xObject.value = xObject.value + numericalCharacter;
-                }
+                displayObject(xObject, numericalCharacter);
             }
             else if (inputBoxId == "yId") {
-                if (yObject.value == "0") {
-                    yObject.value = numericalCharacter;
-                }
-                else if (numericalCharacter == ".") {
-                    if (yObject.value.includes(".") == false) {
-                        yObject.value = yObject.value + numericalCharacter;
-                    }
-                }
-                else {
-                    yObject.value = yObject.value + numericalCharacter;
-                }
+                displayObject(yObject, numericalCharacter);
             }
         }
-        
+
+        function displayObject(inputBoxObject, numericalCharacter) {
+            if (inputBoxObject.value == "0") {
+                inputBoxObject.value = numericalCharacter;
+            }
+            else if (numericalCharacter == ".") {
+                if (inputBoxObject.value.includes(".") == false) {
+                    inputBoxObject.value = inputBoxObject.value + numericalCharacter;
+                }
+            }
+            else {
+                inputBoxObject.value = inputBoxObject.value + numericalCharacter;
+            }
+        }
+
         //function includes() {
           //var mystr = ".";
          //var n = mystr.includes(".");
@@ -162,8 +155,7 @@
      <button onClick="display6()">6</button>  <br>
      <button onClick="display7()">7</button>  
      <button onClick="display8()">8</button>  
-     
+     <button onClick="display9()">9</button>
 
-     
     </body>
 </html>
