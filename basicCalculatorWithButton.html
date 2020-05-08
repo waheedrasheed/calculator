@@ -5,15 +5,19 @@
         </title>
     </head>
     <body>
-        <input id = "xId" onclick="inputInTextBoxX()" text="enter first number"><br>
-        <input id = "yId" onclick="inputInTextBoxY()" text="enter second number"><br>
-        <input id = "zId" text="Answer"><br>
+        <p>
+        x = <input id = "xId" onclick="inputInTextBoxX()" text="enter first number"><br>
+        y = <input id = "yId" onclick="inputInTextBoxY()" text="enter second number"><br>
+        ans = <input id = "zId" text="Answer"><br> </p>
+        <button id ="dotButtonId"   onClick="displayDot()">.</button>
      <script>
 
         var xObject = document.getElementById("xId");
         var yObject = document.getElementById("yId");
         var zObject = document.getElementById("zId");
         var inputBoxId = "xId";
+        var dotButtonObject = document.getElementById("dotButtonId");
+        
 
         function add() {
             var x = xObject.value;
@@ -52,6 +56,12 @@
         
         function display0 () {
             display("0");
+            //updateXbox(xObject);
+        }
+        function displayDot(){
+            display (".");
+            //disableButton();
+            includes();
         }
         function display1 () {
             display("1");   
@@ -80,24 +90,58 @@
         function display9 () {
             display("9");
         }
-
+ 
         function display(numericalCharacter) {
-            if (inputBoxId == "xId")
-            {
-                xObject.value = xObject.value + numericalCharacter;
+            if (inputBoxId == "xId") {
+                if (xObject.value == "0") {
+                    xObject.value = numericalCharacter;
+                }
+                else if (numericalCharacter == ".") {
+                    if (xObject.value.includes(".") == false) {
+                        xObject.value = xObject.value + numericalCharacter;
+                    }
+                }
+                else {
+                    xObject.value = xObject.value + numericalCharacter;
+                }
             }
-            else if (inputBoxId == "yId")
-            {
-                yObject.value = yObject.value + numericalCharacter;
+            else if (inputBoxId == "yId") {
+                if (yObject.value == "0") {
+                    yObject.value = numericalCharacter;
+                }
+                else if (numericalCharacter == ".") {
+                    if (yObject.value.includes(".") == false) {
+                        yObject.value = yObject.value + numericalCharacter;
+                    }
+                }
+                else {
+                    yObject.value = yObject.value + numericalCharacter;
+                }
             }
         }
+        
+        //function includes() {
+          //var mystr = ".";
+         //var n = mystr.includes(".");
+           //document.getElementById("xId").innerHTML = n;
+        //}
+        
+        //function disableButton() {
+          //dotButtonObject.disabled = true;
+        //}
+
+        //function enableButton() {
+          //dotButtonObject.disabled = false;
+        //}
 
         function inputInTextBoxX() {
             inputBoxId = "xId";
+            //enableButton();
         }
 
         function inputInTextBoxY() {
             inputBoxId = "yId";
+            //enableButton();
         }
 
      </script>
@@ -118,6 +162,8 @@
      <button onClick="display6()">6</button>  <br>
      <button onClick="display7()">7</button>  
      <button onClick="display8()">8</button>  
-     <button onClick="display9()">9</button>
+     
+
+     
     </body>
 </html>
