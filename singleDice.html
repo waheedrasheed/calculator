@@ -7,7 +7,7 @@
     <body>
        
        <p style="color: red;" id="dice1Id" text="dice1">0</p>
-       <p style="color: red;" id="dice2Id" text="dice2">0</p>
+       <p style="color: red" id="dice2Id" text="dice2">0</p>
        <button id="diceButtonId" onclick="rollDice()">Roll Dice</button>
        <audio id="audioId" onended="enableButton()">
         <source src="http://soundbible.com/mp3/Shake And Roll Dice-SoundBible.com-591494296.mp3" type="audio/mpeg">
@@ -21,10 +21,11 @@
         var diceColor = "red";
 
         function rollDice(){
-        //var d1= (Math.floor(Math.random() * 100) % 6) + 1;
-        //var d2= (Math.floor(Math.random() * 100) % 6) + 1;
-        //dice1.innerHTML = d1;
-        //dice2.innerHTML = d2;
+        var d1= (Math.floor(Math.random() * 100) % 6) + 1;
+        var d2= (Math.floor(Math.random() * 100) % 6) + 1;
+        var totalDice = d1 + d2; 
+        dice1.innerHTML = d1;
+        dice2.innerHTML = d2;
 
         //updateDice(dice1);
         //updateDice(dice2);
@@ -32,7 +33,9 @@
        audioObject.play();
         dice1.innerHTML = getDiceValue();
         dice2.innerHTML = getDiceValue();
-        changeColor();
+        if (totalDice < 12) {
+            changeColor();
+            }
         }
 
         function disableButton() {
@@ -43,7 +46,8 @@
             diceButtonObject.disabled = false;
         }
 
-        function changeColor()  {
+        function changeColor()  { 
+           
             if (diceColor == "red") {
                 dice1.style.color="blue";
                 dice2.style.color="blue";
@@ -76,7 +80,6 @@
             var diceValue = (Math.floor(Math.random() * 100) % 6) + 1;
             diceObject.innerHTML = diceValue;
         }
-
         
     </script>
     
