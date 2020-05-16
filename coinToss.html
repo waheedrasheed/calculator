@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+          Coin Toss
+        </title>
+    </head>
+    <body>
+       
+       <p id="coinId" text="coin">""</p>
+       
+       <button id="coinButtonId" onclick="tossCoin()">Toss coin</button>
+    
+    <script>
+        var coinObject = document.getElementById("coinId");
+               
+        var coinButtonObject = document.getElementById("coinButtonId");
+
+        function tossCoin() {
+            var coinValue = Math.floor(Math.random() * 100) % 2;
+            
+            if (coinValue==1){
+                coinObject.innerHTML= "head";
+            }
+            else {
+                coinObject.innerHTML = "tail";
+            }
+        }
+    </script>    
+    </body>
+</html>

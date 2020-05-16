@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+          Double dice
+        </title>
+    </head>
+    <body>
+       
+       <p id="dice1Id" text="dice1">0</p>
+       <p id="dice2Id" text="dice2">0</p>
+       <button id="diceButtonId" onclick="rollDice()">Roll Dice</button>
+    
+     <script>
+        var dice1 = document.getElementById("dice1Id");
+        var dice2 = document.getElementById("dice2Id");        
+       
+        function rollDice(){
+            var d1= (Math.floor(Math.random() * 100) % 6) + 1;
+            var d2= (Math.floor(Math.random() * 100) % 6) + 1; 
+            dice1.innerHTML = d1;
+            dice2.innerHTML = d2;
+            
+            if (d1==d2) {
+                dice1.innerHTML = d1 + " = " + d2;
+            }
+            else if (d1<d2) {
+                dice1.innerHTML = d1 + " < " + d2 ;
+            }
+            else if (d1>d2) {
+                dice1.innerHTML = d1 + " > " + d2;
+            }
+        }
+       
+    </script>
+    
+    </body>
+</html>
