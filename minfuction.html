@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>
+          Min function
+        </title>
+    </head>
+    <body>
+      
+       <p id="minValueId" text="minValue"></p>
+       <button onclick="displayMinAndMax()"> min/max value</button>
+    
+     <script>
+        var minValueObject = document.getElementById("minValueId");
+        var dataArray = new Array(5, 12, 3, 7, 6, 8, 9, 10, 3, 10, 12, 3, 7, 16, 8, 9, 1, 3, 10, 12, 3, 7, 6, 8, 9, 10, 3, 10, 12, 3, 7, 6, 8, 9, 1, 3);
+        var arrayIndex = 0;
+
+        while (arrayIndex < dataArray.length) {
+            minValueObject.innerHTML = minValueObject.innerHTML + "  " + dataArray[arrayIndex];
+
+            arrayIndex = arrayIndex + 1;
+        }
+    
+       function displayMinAndMax() {
+        var minValue = 0;
+        var maxValue = 0;
+        var arrayIndex = 2;
+
+        minValue = min(dataArray[0], dataArray[1]);
+
+        while(arrayIndex < dataArray.length) {
+            minValue = min(minValue, dataArray[arrayIndex]);
+            arrayIndex = arrayIndex + 1;
+        }
+
+        arrayIndex = 2;
+        
+        maxValue = max(dataArray[0], dataArray[1]);
+
+        while(arrayIndex < dataArray.length) {
+            maxValue = max(maxValue, dataArray[arrayIndex]);
+            arrayIndex = arrayIndex + 1;
+        }
+        
+        //minValue = min(10, 12);
+        //minValue = min(minValue, 3);
+        //minValue = min(minValue, 7);
+        //minValue = min(minValue, 6);
+        //minValue = min(minValue, 8);
+        //minValue = min(minValue, 9);
+        //minValue = min(minValue, 10);
+        //minValue = min(minValue, 3);
+
+           /*maxValue = max(10, 12);
+            //maxValue = max(maxValue, 3);
+            //maxValue = max(maxValue, 7);
+           // maxValue = max(maxValue, 6);
+            maxValue = max(maxValue, 8);
+            maxValue = max(maxValue, 9);
+            maxValue = max(maxValue, 10);
+            maxValue = max(maxValue, 3);*/
+            minValueObject.innerHTML = "min = " + minValue +  " max = " + maxValue;
+       }
+
+        function min(x, y) {
+            var minValue = 0;
+
+            if (x < y) {
+                minValue = x;
+            }
+            else {
+                minValue = y;
+            }
+
+            return minValue;
+        }
+
+        function max(x, y) {
+            var maxValue = 0;
+
+            if (x > y) {
+                maxValue = x;
+            }
+            else {
+                maxValue = y;
+            }
+
+            return maxValue;
+        }
+    </script>   
+    </body>
+</html>

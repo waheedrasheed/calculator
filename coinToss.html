@@ -6,24 +6,40 @@
     </head>
     <body>
        
-       <p id="coinId" text="coin">""</p>
-       
-       <button id="coinButtonId" onclick="tossCoin()">Toss coin</button>
+       <p id="coinTossStatsId" text="coin">  </p> 
+       <button id="coinButtonId" onclick="displayCoinTossStats()">Toss coin</button>
     
     <script>
-        var coinObject = document.getElementById("coinId");
-               
+        var totalCoinToss = 10;
+        var coinTossStatsObject = document.getElementById("coinTossStatsId");
         var coinButtonObject = document.getElementById("coinButtonId");
+
+        function displayCoinTossStats() {
+            var coinTossCount = 0;
+            var headCount = 0;
+            var tailCount = 0;
+            var para;
+
+            while (coinTossCount < totalCoinToss) {
+                var coinValue = tossCoin();
+                
+                headCount = headCount + coinValue;
+
+                para = document.createElement("p");
+                para.innerHTML = "coinValue " + coinValue;
+                document.body.appendChild(para);
+
+                coinTossCount = coinTossCount + 1;
+            }
+
+            tailCount = totalCoinToss - headCount;
+            coinTossStatsObject.innerHTML = "heads = " + headCount + ", tails = " + tailCount;
+        }
 
         function tossCoin() {
             var coinValue = Math.floor(Math.random() * 100) % 2;
-            
-            if (coinValue==1){
-                coinObject.innerHTML= "head";
-            }
-            else {
-                coinObject.innerHTML = "tail";
-            }
+
+            return coinValue;
         }
     </script>    
     </body>
