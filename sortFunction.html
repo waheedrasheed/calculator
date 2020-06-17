@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>
+          Sort function
+        </title>
+    </head>
+    <body>
+      
+       <p id="numId" text="num"></p>
+       <button onclick="sortValue()"> sort array</button>
+    
+     <script>
+        var numObject = document.getElementById("numId");
+        var dataArray = [18,5,13,11,9];     
+        
+        numObject.innerHTML = dataArray;
+        
+        function displaySortArrey() {
+
+            var sortArrayIndex = 0;
+
+            while(sortArrayIndex < dataArray.length - 1) {
+                var sortElementIndex = 0;
+
+                while(sortElementIndex < dataArray.length - 1) {        
+                    if (dataArray[sortElementIndex] > dataArray[sortElementIndex+1]){
+                        swap(sortElementIndex);
+                    }
+                    sortElementIndex = sortElementIndex + 1;
+                }
+
+                var para = document.createElement("p");
+                para.innerHTML =  dataArray;
+                document.body.appendChild(para); 
+
+                sortArrayIndex = sortArrayIndex+1;            
+            }
+        }
+
+//creat a swap function with parameter
+        function sortValue () {
+            dataArray.sort(compareElements);
+            numObject.innerHTML = dataArray; 
+
+            //displaySortArrey();
+        }
+
+        function compareElements(x,y) {
+            //if (x < y) {return -1;}
+            if (x > y) {return -1;}
+            //return 0;
+            //return x - y;
+        }
+        
+        /*function displaySortArrey(dataArray,  arrayIndex ) {
+            
+            if (dataArray[0] > dataArray[1]){
+                swap(arrayIndex);
+            }
+
+            if (dataArray[1] > dataArray[2]){
+                swap(arrayIndex+1);
+            }
+            if (dataArray[2] > dataArray[3]){
+                swap(arrayIndex+2);
+            }
+
+            numObject.innerHTML = dataArray;
+        }*/
+
+         function swap(index) {
+
+            var temp = dataArray[index];
+            dataArray[index] = dataArray[index +1];
+            dataArray[index + 1] = temp;
+        }
+        
+
+        //numObject.innerHTML = dataArray;
+        
+        /*var temp = dataArray[0];
+        dataArray[0] = dataArray[1];
+        dataArray[1] = temp;
+
+        while (arrayIndex < dataArray.length) {
+            numObject.innerHTML = numObject.innerHTML + "  " + dataArray[arrayIndex];
+
+            arrayIndex = arrayIndex + 1;
+        }
+
+        function mySort() {
+            var a = 0;
+            var b = 0;
+            var arrayIndex = 0;
+
+            var temp = dataArray[0];
+            dataArray[0] = dataArray[1];
+            dataArray[1] = temp;
+
+            sortValue = sort(dataArray[0], dataArray[1]);
+
+            while(arrayIndex < dataArray.length) {
+                sortValue = sort(sortValue, dataArray[arrayIndex]);
+            arrayIndex = arrayIndex + 1;
+        }
+        numObject.innerHTML = dataArray;
+
+        }
+        function sort(x, y) {
+            var sortValue = 0;
+
+            if (x > y) {
+                sortValue = y   +    x ;
+            }
+            else {
+                sortValue = x + y;
+            }
+
+            return sortValue;
+        }*/
+
+        /*function accendingArrey() {
+            //var arrayIndex = 0;
+            //while (dataArray[arrayIndex] < 100) {-
+                //numObject.innerHTML = dataArray;
+                //arrayIndex = arrayIndex + 1;
+            //}
+            //numObject.innerHTML = dataArray.sort();
+            dataArray.sort(accendingNumbers);
+            numObject.innerHTML = dataArray; 
+        }
+            function accendingNumbers(x,y) {
+                return x - y;
+        }*/
+
+    </script>   
+    </body>
+</html>
